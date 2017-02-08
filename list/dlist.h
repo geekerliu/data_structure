@@ -1,3 +1,6 @@
+/**
+ * 双向链表
+ */
 #ifndef DLIST_H
 #define DLIST_H
 
@@ -6,7 +9,7 @@
 typedef struct DListElmt_
 {
 	void *data;
-	struct DlistElmt_ *prev;
+	struct DListElmt_ *prev;
 	struct DListElmt_ *next;
 } DListElmt;
 

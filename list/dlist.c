@@ -1,3 +1,6 @@
+/**
+ * 双向链表
+ */
 #include <stdlib.h>
 #include <string.h>
 
@@ -40,5 +43,31 @@ int dlist_ins_prev(DList *list, DListElmt *element, const void *data)
 
 int dlist_remove(DList *list, DListElmt *element, void **data)
 {
+	if (element == NULL || dlist_size(list) == 0)
+		return -1;
+
+	*data = element->data;
+	if (element == list->head) {
+		list->head = element->next;
+
+		if (list->head == NULL)
+			list->tail = NULL;
+		else
+			element->next->prev = NULL;
+	} else {
+		// 将前一个节点的next指向当前节点的下一个节点
+		element->prev->next = element->next;
+		// 如果这个节点是最后一个节点，删除后，将尾指针指向当前节点的前一个节点；
+		// 如果不是最后一个节点，则将后一个节点的prev指向当前节点的前一个节点。
+		if (element->next == NULL)
+			list->tail = element->prev;
+		else
+			element->next->prev = element->prev;
+	}
+
+	free(element);
+
+	list->size--;
+
 	return 0;
 }
