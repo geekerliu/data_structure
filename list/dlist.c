@@ -1,11 +1,16 @@
 /**
- * 双向链表
+ * 双向链表,dlist.c
  */
 #include <stdlib.h>
 #include <string.h>
 
 #include "dlist.h"
 
+/**
+ * 初始化链表
+ * @param list 要初始化的链表
+ * @param destory 指定一个销毁数据的函数，该函数会在dlist_destroy中调用。
+ */
 void dlist_init(DList *list, void (*destroy)(void *data))
 {
 	list->size = 0;
@@ -14,6 +19,10 @@ void dlist_init(DList *list, void (*destroy)(void *data))
 	list->tail = NULL;
 }
 
+/**
+ * 销毁链表
+ * @param list 要销毁的链表
+ */
 void dlist_destroy(DList *list)
 {
 	void *data;
@@ -114,6 +123,13 @@ int dlist_ins_prev(DList *list, DListElmt *element, const void *data)
 	return 0;
 }
 
+/**
+ * 将元素element从链表中移除
+ * @param  list    要操作的链表
+ * @param  element 要从链表中移除的节点
+ * @param  data    移除的节点中的数据
+ * @return         成功返回0；失败返回-1。
+ */
 int dlist_remove(DList *list, DListElmt *element, void **data)
 {
 	if (element == NULL || dlist_size(list) == 0)

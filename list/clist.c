@@ -1,5 +1,5 @@
 /**
- * 单向循环链表
+ * 单向循环链表,clist.c
  */
 #include <stdlib.h>
 #include <string.h>
@@ -27,6 +27,13 @@ void clist_destroy(CList *list)
 	memset(list, 0, sizeof(CList));
 }
 
+/**
+ * 插入元素到链表list的节点element后面。
+ * @param  list    链表
+ * @param  element 节点
+ * @param  data    数据
+ * @return         成功返回0，失败-1
+ */
 int clist_ins_next(CList *list, CListElmt *element, const void *data)
 {
 	CListElmt *new_element;
@@ -47,6 +54,13 @@ int clist_ins_next(CList *list, CListElmt *element, const void *data)
 	return 0;
 }
 
+/**
+ * 从链表list中删除element节点。
+ * @param  list    链表
+ * @param  element 节点
+ * @param  data    被删除节点中的数据
+ * @return         成功返回0，失败返回-1
+ */
 int clist_rem_next(CList *list, CListElmt *element, void **data)
 {
 	CListElmt *old_element;

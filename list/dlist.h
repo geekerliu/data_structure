@@ -1,5 +1,5 @@
 /**
- * 双向链表
+ * 双向链表,dlist.h
  */
 #ifndef DLIST_H
 #define DLIST_H

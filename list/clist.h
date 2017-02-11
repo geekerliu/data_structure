@@ -1,5 +1,5 @@
 /**
- * 单向循环链表
+ * 单向循环链表,clist.h
  */
 #ifndef CLIST_H
 #define CLIST_H
