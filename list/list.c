@@ -72,7 +72,7 @@ int list_ins_next(List *list, ListElmt *element, const void *data)
 }
 
 /**
- * 将节点element从链表list中删除
+ * 将节点element后面的那个节点从链表list中删除
  * @param  list    要操作的链表
  * @param  element 指定的节点
  * @param  data    用于保存被删除的节点中的数据
