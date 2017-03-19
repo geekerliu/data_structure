@@ -1,4 +1,4 @@
-// ohtbl.c开地址哈希表
+// ohtbl.c，开地址哈希表
 #include <stdlib.h>
 #include <string.h>
 

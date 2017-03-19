@@ -1,4 +1,4 @@
-// chtbl.c
+// chtbl.c，链式哈希表
 #include <stdlib.h>
 #include <string.h>
 
