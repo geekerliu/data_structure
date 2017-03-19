@@ -6,7 +6,7 @@
 #include "list.h"
 #include "set.h"
 
-// 邻接表定义
+// 邻接表的定义
 typedef struct AdjList_ {
 	void *vertex;//顶点
 	Set adjacent;//与该顶点相邻接的顶点的集合

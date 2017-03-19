@@ -166,7 +166,7 @@ int graph_rem_edge(Graph *graph, void *data1, void **data2)
 	return 0;
 }
 
-// 获取指定顶点的邻接表
+// 获取图中的某个邻接表
 int graph_adjlist(const Graph *graph, const void *data, AdjList **adjlist)
 {
 	// prev这个指针有卵用？
@@ -188,7 +188,7 @@ int graph_adjlist(const Graph *graph, const void *data, AdjList **adjlist)
 	return 0;
 }
 
-// 判断指定的两个顶点是否有邻接关系
+// 判断指定的两个顶点是否邻接
 int graph_is_adjacent(const Graph *graph, const void *data1,
                       const void *data2)
 {
