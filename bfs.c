@@ -45,7 +45,7 @@ int bfs(Graph *graph, BfsVertex *start, List *hops)
 		return -1;
 	}
 
-	// 开始深度优先搜索
+	// 开始广度优先搜索
 	while (queue_size(&queue) > 0) {
 		adjlist = queue_peek(&queue);
 		// 遍历当前邻接表中的每一个顶点
