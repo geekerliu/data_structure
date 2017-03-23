@@ -23,8 +23,8 @@ static int compare_int(const void *int1, const void *int2)
 /**
  * data: 用于排序的数据集合
  * esize：元素大小
- * i:
- * k:
+ * i:左边开始位置
+ * k:右边末尾位置
  * compare:比较函数
  * return:返回中间位置
  */
@@ -42,7 +42,7 @@ static int partition(void *data, int esize, int i, int k,
 		free(pval);
 		return -1;
 	}
-	// 计算中位数
+	// 随机计算一个中位数
 	r[0] = (rand() % (k - i + 1)) + i;
 	r[1] = (rand() % (k - i + 1)) + i;
 	r[2] = (rand() % (k - i + 1)) + i;
@@ -78,8 +78,8 @@ static int partition(void *data, int esize, int i, int k,
 }
 
 /**
- * i:最左边位置
- * k:最右边位置
+ * i:开始时为0
+ * k:开始时为size-1
  */
 int qksort(void *data, int size, int esize, int i, int k, int (*compare)
            (const void *key1, const void *key2))

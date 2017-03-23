@@ -8,10 +8,10 @@
  * 将两个有序集合并为一个
  * data:有序集
  * esize:单个元素大小
- * i:
- * j:
- * k:
- * compare:
+ * i:左边集合的开始位置
+ * j:中间位置
+ * k:右边集合的最后位置
+ * compare:用户传入得用于比较两个数据大小的函数
  */
 static int merge(void *data, int esize, int i, int j, int k, 
 	int (*compare)(const void *key1, const void *key2))
@@ -68,7 +68,7 @@ static int merge(void *data, int esize, int i, int j, int k,
  * size:元素个数
  * esize:单个元素的大小
  * i:开始时i设置为0
- * k:开始是k设置为size-1
+ * k:开始时k设置为size-1
  * compare:用户传入得用于比较两个数据大小的函数
  */
 int mgsort(void *data, int size, int esize, int i, int k, int (*compare)
